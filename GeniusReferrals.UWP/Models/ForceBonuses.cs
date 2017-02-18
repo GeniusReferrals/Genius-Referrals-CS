@@ -17,79 +17,61 @@ using GeniusReferrals.UWP.Utilities;
 
 namespace GeniusReferrals.UWP.Models
 {
-    public class Referral : INotifyPropertyChanged 
+    public class ForceBonuses : INotifyPropertyChanged 
     {
         // These fields hold the values for the public properties.
-        private string referredAdvocateToken;
-        private string referralOriginSlug;
-        private string campaignSlug;
-        private string httpReferer;
+        private string advocateToken;
+        private string reference;
+        private int bonusAmount;
 
         /// <summary>
-        /// The referrals token
+        /// The referral's token.
         /// </summary>
-        [JsonProperty("referred_advocate_token")]
-        public string ReferredAdvocateToken 
+        [JsonProperty("advocate_token")]
+        public string AdvocateToken 
         { 
             get 
             {
-                return this.referredAdvocateToken; 
+                return this.advocateToken; 
             } 
             set 
             {
-                this.referredAdvocateToken = value;
-                onPropertyChanged("ReferredAdvocateToken");
+                this.advocateToken = value;
+                onPropertyChanged("AdvocateToken");
             }
         }
 
         /// <summary>
-        /// The referral origin identifier
+        /// The reference number for this request. Usually the order_id, payment_id, or timestamp.
         /// </summary>
-        [JsonProperty("referral_origin_slug")]
-        public string ReferralOriginSlug 
+        [JsonProperty("reference")]
+        public string Reference 
         { 
             get 
             {
-                return this.referralOriginSlug; 
+                return this.reference; 
             } 
             set 
             {
-                this.referralOriginSlug = value;
-                onPropertyChanged("ReferralOriginSlug");
+                this.reference = value;
+                onPropertyChanged("Reference");
             }
         }
 
         /// <summary>
-        /// The campaign identifier
+        /// The bonus amount to give to the advocate.
         /// </summary>
-        [JsonProperty("campaign_slug")]
-        public string CampaignSlug 
+        [JsonProperty("bonus_amount")]
+        public int BonusAmount 
         { 
             get 
             {
-                return this.campaignSlug; 
+                return this.bonusAmount; 
             } 
             set 
             {
-                this.campaignSlug = value;
-                onPropertyChanged("CampaignSlug");
-            }
-        }
-
-        /// <summary>
-        /// The http_referrer URL
-        /// </summary>
-        [JsonProperty("http_referer")]
-        public string HttpReferer 
-        { 
-            get 
-            {
-                return this.httpReferer; 
-            } 
-            set 
-            {
-                this.httpReferer = value;
-                onPropertyChanged("HttpReferer");
+                this.bonusAmount = value;
+                onPropertyChanged("BonusAmount");
             }
         }
 

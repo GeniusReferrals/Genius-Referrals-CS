@@ -17,25 +17,25 @@ using GeniusReferrals.UWP.Utilities;
 
 namespace GeniusReferrals.UWP.Models
 {
-    public class BonusesForm : INotifyPropertyChanged 
+    public class PaymentMethodForm : INotifyPropertyChanged 
     {
         // These fields hold the values for the public properties.
-        private Bonuses bonus;
+        private PaymentMethod advocatePaymentMethod;
 
         /// <summary>
-        /// The bonuses' wrapper
+        /// The payment methods wrapper
         /// </summary>
-        [JsonProperty("bonus")]
-        public Bonuses Bonus 
+        [JsonProperty("advocate_payment_method")]
+        public PaymentMethod AdvocatePaymentMethod 
         { 
             get 
             {
-                return this.bonus; 
+                return this.advocatePaymentMethod; 
             } 
             set 
             {
-                this.bonus = value;
-                onPropertyChanged("Bonus");
+                this.advocatePaymentMethod = value;
+                onPropertyChanged("AdvocatePaymentMethod");
             }
         }
 
